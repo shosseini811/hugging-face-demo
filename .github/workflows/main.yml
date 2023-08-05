@@ -20,6 +20,6 @@ jobs:
       - name: Push to Hugging Face
         env:
           HF_TOKEN: ${{ secrets.HUGGINGFACE }}
-        run:  git push --force https://huggingface.co/spaces/Sohailhosseini/demo
+        run:  git push --force https://huggingface.co/spaces/Sohailhosseini/demo main
 
 

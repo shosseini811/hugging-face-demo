@@ -15,11 +15,11 @@ jobs:
       - name: Add remote
         env:
           HF_TOKEN: ${{ secrets.HUGGINGFACE }}
-          run: git remote add space https://huggingface.co/spaces/Sohailhosseini/demo
+        run: git remote add space https://huggingface.co/spaces/Sohailhosseini/demo
 
       - name: Push to Hugging Face
         env:
           HF_TOKEN: ${{ secrets.HUGGINGFACE }}
-          run:  git push --force https://huggingface.co/spaces/Sohailhosseini/demo
+        run:  git push --force https://huggingface.co/spaces/Sohailhosseini/demo
 
 

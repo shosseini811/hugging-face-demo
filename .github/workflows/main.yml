@@ -1,0 +1,26 @@
+name: CI/CD to Hugging Face
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy-to-huggingface:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: Add remote
+        env:
+          HF_TOKEN: ${{ secrets.HUGGINGFACE }}
+          run: git remote add space https://huggingface.co/spaces/Sohailhosseini/demo
+
+      - name: Push to Hugging Face
+        env:
+          HF_TOKEN: ${{ secrets.HUGGINGFACE }}
+          run:  git push --force https://huggingface.co/spaces/Sohailhosseini/demo
+
+
